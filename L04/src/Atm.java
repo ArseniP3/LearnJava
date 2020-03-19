@@ -29,31 +29,40 @@ public class Atm {
         System.out.println("Вы добавили в банкомат " + hundred+ " двадцатирублёвых купюр.");
         return sumHundred;
     }
-    public static int allMoney(){
+    public static int allMoneyInAtm(){
         int sum = addTwenty(555) + addFifty(333) + addHundred(111);
         System.out.println("Доступная сумма в банкомате: " + sum + " рублей.");
         return sum;
     }
-
-
-    public static int takeCash(){
+    public static int determinationOfAmount(){
         Scanner sc = new Scanner(System.in);
-        System.out.print("Введите сумму, которую хотите снять со счёта: ");
-        int money = sc.nextInt();
-        if(money %20 == 0 & money <= allMoney()){
+        System.out.println("Введите сумму, которую хотите снять со счёта: ");
+        int takeNoney = sc.nextInt();
+        return takeNoney;
+    }
+    public static boolean operationSuccess(){
+        if (determinationOfAmount()>allMoneyInAtm() & determinationOfAmount() %20 !=0){
+            System.out.println("В банкомете нет необходимой суммы. В банкомате нет купюр номиналом меньше 20 рублей.");
+            return false;
+        }else if (determinationOfAmount()>allMoneyInAtm()){
+            System.out.println("В банкомате нет необходимой суммы.");
+            return false;
+        }else if (determinationOfAmount() %20 !=0){
+            System.out.println("В банкомате нет купюр номиналом меньше 20 рублей.");
+            return false;
+        }else {
             System.out.println("Транзакция одобрена, ожидайте выдачи наличных.");
-
-        }else if (money %20 !=0){
-            System.out.println("Вы ввели сумму не кратную 20ти");
-        }else if(money>= allMoney()){
-            System.out.println("В банкомате нет столько денег.");
+            return true;
         }
-        return money;
     }
 
+
     public static void main(String[] args) {
-        allMoney();
-        takeCash();
+        allMoneyInAtm();
+        determinationOfAmount();
+        operationSuccess();
+
+
 
     }
 }
