@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /*
 2. Создать класс, описывающий банкомат.
 Набор купюр, находящихся в банкомате должен задаваться тремя свойствами:
@@ -10,59 +8,50 @@ import java.util.Scanner;
 Создать конструктор с тремя параметрами - количеством купюр каждого номинала.
  */
 public class Atm {
-    int twenty = 20;
-    int fifty = 50;
-    int hundred = 100;
+    int twentyNoteCount;
+    int fiftyNoteCount;
+    int hundredNoteCount;
 
-    public static int addTwenty (int twenty){
-        int sumTwenty = 20 * twenty;
-        System.out.println("Вы добавили в банкомат " + twenty+ " двадцатирублёвых купюр.");
-        return sumTwenty;
+    public Atm (int twentyNoteCount, int fiftyNoteCount, int hundredNoteCount){
+        this.twentyNoteCount = twentyNoteCount;
+        this.fiftyNoteCount = fiftyNoteCount;
+        this.hundredNoteCount = hundredNoteCount;
     }
-    public static int addFifty (int fifty){
-        int sumFifty = 50 * fifty;
-        System.out.println("Вы добавили в банкомат " + fifty+ " двадцатирублёвых купюр.");
-        return sumFifty;
-    }
-    public static int addHundred (int hundred){
-        int sumHundred = 100 * hundred;
-        System.out.println("Вы добавили в банкомат " + hundred+ " двадцатирублёвых купюр.");
-        return sumHundred;
-    }
-    public static int allMoneyInAtm(){
-        int sum = addTwenty(555) + addFifty(333) + addHundred(111);
-        System.out.println("Доступная сумма в банкомате: " + sum + " рублей.");
+    public int addTwenty(){
+       int sum = twentyNoteCount * 20;
+        System.out.println("Вы добавили в банкомат " + twentyNoteCount + " двадцатирублёвых купюр.");
         return sum;
     }
-    public static int determinationOfAmount(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите сумму, которую хотите снять со счёта: ");
-        int takeNoney = sc.nextInt();
-        return takeNoney;
+    public int addFifty(){
+        int sum = fiftyNoteCount * 50;
+        System.out.println("Вы добавили в банкомат " + fiftyNoteCount + " пятидесятирублёвых купюр." );
+        return sum;
     }
-    public static boolean operationSuccess(){
-        if (determinationOfAmount()>allMoneyInAtm() & determinationOfAmount() %20 !=0){
-            System.out.println("В банкомете нет необходимой суммы. В банкомате нет купюр номиналом меньше 20 рублей.");
-            return false;
-        }else if (determinationOfAmount()>allMoneyInAtm()){
+    public int addHundred(){
+        int sum = hundredNoteCount * 50;
+        System.out.println("Вы добавили в банкомат " + hundredNoteCount + " сторублёвых купюр." );
+        return sum;
+    }
+    public int allMoney(){
+        int sum = addTwenty()+addFifty()+addHundred();
+        System.out.println("В банкомате: " + sum + " рублей.");
+        return sum;
+    }
+    public boolean isAvalibleAmount (int amount){
+        boolean b = amount % 20 != 0 || amount % 50 != 0 || amount % 70 != 0 || amount % 90 != 0 || amount % 110 != 0 || amount % 130 != 0;
+        if ((amount>allMoney()) & b){
+            System.out.println("В банкомате нет необходимой суммы. В банкомате нет купюр необходимого номинала.");
+        }else if (amount>allMoney()){
             System.out.println("В банкомате нет необходимой суммы.");
-            return false;
-        }else if (determinationOfAmount() %20 !=0){
-            System.out.println("В банкомате нет купюр номиналом меньше 20 рублей.");
-            return false;
+        }else if (b){
+            System.out.println("В банокмате нет купюр необходимого номинала.");
         }else {
-            System.out.println("Транзакция одобрена, ожидайте выдачи наличных.");
-            return true;
+            System.out.println("Операция одобрена, ожидаете выдачи наличных.");
         }
+        return true;
     }
-
-
     public static void main(String[] args) {
-        allMoneyInAtm();
-        determinationOfAmount();
-        operationSuccess();
-
-
-
+        Atm atm = new Atm(2000, 500, 300);
+        atm.isAvalibleAmount(110);
     }
 }
