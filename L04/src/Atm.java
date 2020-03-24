@@ -1,3 +1,4 @@
+import java.util.Scanner;
 /*
 2. Создать класс, описывающий банкомат.
 Набор купюр, находящихся в банкомате должен задаваться тремя свойствами:
@@ -50,6 +51,27 @@ public class Atm {
         }
         return true;
     }
+
+    public static int checkScannerIntNumberNew(Scanner sc1, String invitation) {
+        int intNumber = 0;
+
+        do {
+            System.out.print(invitation);
+            intNumber = sc1.nextInt();
+        }
+        while (intNumber < 0);
+        return intNumber;
+    }
+    static Atm pushToAtm() {
+        Scanner sc = new Scanner(System.in);
+        int usd20 = checkScannerIntNumberNew(sc, "Input amount of 20$ banknotes:\t");
+        int usd50 = checkScannerIntNumberNew(sc, "Input amount of 50$ banknotes:\t");
+        int usd100 = checkScannerIntNumberNew(sc, "Input amount of 100$ banknotes:\t");
+        Atm atmMachine = new Atm(usd20, usd50, usd100);
+        return atmMachine;
+
+    }
+
     public static void main(String[] args) {
         Atm atm = new Atm(2000, 500, 300);
         atm.isAvalibleAmount(110);
