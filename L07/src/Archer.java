@@ -4,9 +4,12 @@ public class Archer extends Hero {
     }
 
     @Override
-    public String attackEnemy() {
-        super.attackEnemy();
+    void attackEnemy(Enemy enemyObj) {
+
+    }
+
+    @Override
+    public void attackEnemy() {
         System.out.println(getName() +" атакует врага стрелами из лука");
-        return (getName() +" атакует врага стрелами из лука");
     }
 }

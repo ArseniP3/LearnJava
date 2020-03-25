@@ -4,9 +4,8 @@ public class Warrior extends Hero {
     }
 
     @Override
-    public String attackEnemy() {
-        super.attackEnemy();
+    public void attackEnemy() {
         System.out.println(getName() +" атакует врага секирой");
-        return (getName() +" атакует врага секирой");
+
     }
 }

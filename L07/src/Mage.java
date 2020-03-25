@@ -4,9 +4,7 @@ public class Mage extends Hero {
     }
 
     @Override
-    public String attackEnemy() {
-        super.attackEnemy();
+    public void attackEnemy() {
         System.out.println(getName() +" атакует врага искрами");
-        return (getName() +" атакует врага искрами");
     }
 }
