@@ -8,8 +8,11 @@ public class Task6 {
         int k = 1;
         StringBuilder duplicate = new StringBuilder("Jaavaaaaaa");
         StringBuilder notDuplicate = null;
-//        duplicate = duplicate.replaceAll("([])\\1+", "$1");
+//        duplicate = duplicate.replaceAll("([a-z][A-Z][1-9])\\1+", "$1");
 //        System.out.println(duplicate);
+//     через регулярку прошло, только не понимаю как в условие включить все возможные символы.
+        // И не понимаю почему работает не до конца через цикл(
+
         for (int i = 0; i < duplicate.length(); i++){
             if(duplicate.charAt(j) != duplicate.charAt(k)){
 
