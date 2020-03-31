@@ -10,7 +10,7 @@ public class Task2_1 {
         String lineOfNumbers = "Decimal examples: 11, 1, 32, 43, 14." +
                 "Binary examples: 0b1101, 0b1111. " +
                 "Hexadecimal examples: 0x145D, 0X146C, 0XAC111, 0x1BD";
-        Pattern pattern = Pattern.compile("(0x|0X)[a-dA-d0-9]{1,5}");
+        Pattern pattern = Pattern.compile("(0x|0X)[a-fA-F0-9]{1,5}");
         Matcher matcher = pattern.matcher(lineOfNumbers);
         while (matcher.find()){
             System.out.println(matcher.group());
