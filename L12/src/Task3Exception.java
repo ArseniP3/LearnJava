@@ -9,7 +9,7 @@ public class Task3Exception extends Exception{
     }
 
     public Task3Exception(String message, Throwable cause) {
-        super(message, cause);
+        super(message, cause);//
     }
 
     public Task3Exception(Throwable cause) {
