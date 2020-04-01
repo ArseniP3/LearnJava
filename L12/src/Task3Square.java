@@ -22,6 +22,7 @@ public class Task3Square {
             square.getPerimeter(-2);
         }catch (Task3Exception e){
             e.printStackTrace();
+            System.err.println("!!!!you must enter a positive number!!!!");
         }
 
     }
