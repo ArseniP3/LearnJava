@@ -7,7 +7,7 @@ public  class Task4 <T extends Number> {
         this.b = b;
     }
 
-    public <T extends Number> Number sum(Object o) {
+    public Number sum(Object o) {
 
         Number result = null;
         if (a instanceof Integer) {
@@ -17,6 +17,10 @@ public  class Task4 <T extends Number> {
             return result;
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
 

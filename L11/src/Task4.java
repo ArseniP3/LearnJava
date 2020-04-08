@@ -12,7 +12,7 @@ public class Task4 {
 
     public static void main(String[] args) {
 
-        Set<Integer> set1 = new TreeSet<>(15);
+        Set<Integer> set1 = new HashSet<>(15);
 
         Random random = new Random(System.currentTimeMillis());
 
