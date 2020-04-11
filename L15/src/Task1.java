@@ -8,6 +8,7 @@ import java.util.Scanner;
  */
 public class Task1 {
     public static void main(String[] args) {
+        Task1 task1 = new Task1();
         try {
             FileReader file = new FileReader("E:\\Обучение JAVA\\LearnJava\\L15\\src\\Task1.txt");
             Scanner sc = new Scanner(file);
