@@ -10,7 +10,8 @@ import static java.time.temporal.ChronoUnit.SECONDS;
 Используя созданные объекты, найти количество дней между этими двумя датами.
  */
 public class Task9 {
-    public static void main(String[] args) {
+
+    public void differenceBetweenDates(){
         LocalDate now = LocalDate.now();
         LocalDate after = LocalDate.of(2020, 06, 25);
         Period period = Period.between(now, after);

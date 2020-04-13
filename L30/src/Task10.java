@@ -7,7 +7,8 @@ import java.time.temporal.ChronoUnit;
 Подсчитать количество секунд между полуночью первой даты и полуночью второй даты.
  */
 public class Task10 {
-    public static void main(String[] args) {
+
+    public void differenceBetweenDatesInSeconds(){
         LocalDateTime now = LocalDateTime.of(2020, 04, 04, 00,00,00);
         LocalDateTime after = LocalDateTime.of(2020, 06, 25, 00,00,00);
 

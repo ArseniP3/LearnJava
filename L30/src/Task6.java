@@ -6,7 +6,8 @@ import java.time.LocalDate;
 Вывести эту дату в консоль.
  */
 public class Task6 {
-    public static void main(String[] args) {
+
+    public void todayPlusThreeMonth(){
         LocalDate date = LocalDate.now();
         LocalDate date1 = date.plusMonths(3);
         System.out.println(date1);

@@ -9,7 +9,8 @@ import java.time.format.DateTimeFormatter;
 Вывести эту строку в консоль
  */
 public class Task7 {
-    public static void main(String[] args) {
+
+    public void dateToString(){
         LocalDate date = LocalDate.now();
         System.out.println("Date before formatting: " + date);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.YYYY");
